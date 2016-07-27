@@ -1,0 +1,20 @@
+<section>
+  <div class="page-header">
+    <h1>My Task</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="task in vm.task" ui-sref="task.view({ taskId: task._id })" class="list-group-item">
+      <small class="list-group-item-text">
+      
+        <span ng-bind="task.created | date:'mediumDate'"></span>
+       
+      <h4 class="list-group-item-heading" ng-bind="task.title"></h4>
+      <p class="list-group-item-text" ng-bind="task.description"></p>
+      <p class="list-group-item-text" ng-bind="task.price"></p>
+      <p class="list-group-item-text" ng-bind="task.category"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.task.$resolved && !vm.task.length">
+    No Task created yet, why don't you <a ui-sref="task.create">create one</a>?
+  </div>
+</section>

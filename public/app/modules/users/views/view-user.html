@@ -1,0 +1,14 @@
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.users.firstname">Users</h1>
+  </div>
+  <div class="pull-right" ng-show="vm.authentication.users._id == vm.users._id">
+    <a class="btn btn-primary" ui-sref="users.edit({ usersId: vm.users._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <p class="lead" ng-bind="vm.users.firstname"></p>
+</section>

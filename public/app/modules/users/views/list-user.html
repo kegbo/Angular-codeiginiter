@@ -1,0 +1,15 @@
+<section>
+  <div class="page-header">
+    <h1>Users</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="task in vm.user" ui-sref="users.view({ usersId: users._id })" class="list-group-item">
+     
+      <h4 class="list-group-item-heading" ng-bind="user.title"></h4>
+      <p class="list-group-item-text" ng-bind="user.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.users.$resolved && !vm.users.length">
+    No Users yet, why don't you <a ui-sref="users.create">create one</a>?
+  </div>
+</section>
